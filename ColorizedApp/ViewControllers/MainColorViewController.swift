@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainColorViewController.swift
 //  ColorizedApp
 //
 //  Created by Paul Makey on 13.12.23.
@@ -7,13 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class MainColorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
