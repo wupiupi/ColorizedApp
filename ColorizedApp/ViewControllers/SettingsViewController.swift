@@ -21,7 +21,16 @@ final class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorView.layer.cornerRadius = 15
+        
+        redSlider.tintColor = .red
+        greenSlider.tintColor = .green
     }
+    
+    @IBAction func sliderValueDidChanged(_ sender: UISlider) {
+        updateUI()
+    }
+}
 
 // MARK: - Private Methods
 private extension SettingsViewController {
