@@ -23,4 +23,15 @@ final class SettingsViewController: UIViewController {
         super.viewDidLoad()
     }
 
+// MARK: - Private Methods
+private extension SettingsViewController {
+    func updateUI() {
+        redValueLabel.text = string(from: redSlider.value)
+        greenValueLabel.text = string(from: greenSlider.value)
+        blueValueLabel.text = string(from: blueSlider.value)
+    }
+    
+    func string(from float: Float) -> String {
+        String(format: "%.2f", float)
+    }
 }
