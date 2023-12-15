@@ -20,7 +20,8 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    weak var delegate: SettingsViewControllerDelegate?
+    // MARK: - Properties
+    unowned var delegate: SettingsViewControllerDelegate!
     var color: UIColor!
     
     // MARK: - Life Cycle
