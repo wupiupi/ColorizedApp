@@ -23,7 +23,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="zLj-L9-GmJ">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
-                                <segue destination="pW0-B5-w8v" kind="show" id="cC0-pC-WYi"/>
+                                <segue destination="8hb-XB-Oop" kind="presentation" modalPresentationStyle="fullScreen" id="cC0-pC-WYi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -41,14 +41,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uS4-TU-zVo">
-                                <rect key="frame" x="16" y="112.5" width="288" height="150"/>
+                                <rect key="frame" x="16" y="44" width="288" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uS4-TU-zVo" secondAttribute="height" multiplier="48:25" id="17i-8J-ysP"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LPY-hn-Z7y">
-                                <rect key="frame" x="16" y="282.5" width="288" height="106"/>
+                                <rect key="frame" x="16" y="214" width="288" height="106"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-6g-MGX">
                                         <rect key="frame" x="0.0" y="0.0" width="55" height="106"/>
@@ -139,7 +139,14 @@
                             <constraint firstItem="uS4-TU-zVo" firstAttribute="leading" secondItem="KGy-er-j6n" secondAttribute="leading" constant="16" id="vkY-Ut-Vi4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EjV-hy-Ey9"/>
+                    <navigationItem key="navigationItem" id="EjV-hy-Ey9">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="beK-3o-mHd">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="saveButtonDidTapped:" destination="pW0-B5-w8v" id="WT2-hZ-aYk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="blueSlider" destination="vS5-pG-3Ek" id="7v6-KG-DUM"/>
                         <outlet property="blueValueLabel" destination="bE5-8U-DU3" id="H3a-kD-dC8"/>
@@ -152,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9C-x2-RAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2075.625" y="-23.239436619718312"/>
+            <point key="canvasLocation" x="3073.125" y="-23.239436619718312"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M4R-6K-XXj">
@@ -160,7 +167,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pvz-nv-AtP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="z7G-TK-Tai">
-                        <rect key="frame" x="0.0" y="20" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
@@ -172,6 +179,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qj1-U9-AMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="121.875" y="-23.239436619718312"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B9e-0J-Rrj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8hb-XB-Oop" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="AOI-VM-HSL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ito-aC-Nbf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pW0-B5-w8v" kind="relationship" relationship="rootViewController" id="uJE-NJ-Wwq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a6H-ZY-PA7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2075.625" y="-23.239436619718312"/>
         </scene>
     </scenes>
     <resources>
