@@ -28,13 +28,14 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorView.layer.cornerRadius = 15
-        colorView.backgroundColor = color
-        
         redSlider.tintColor = .red
         greenSlider.tintColor = .green
         
-        setColors()
+        colorView.layer.cornerRadius = 15
+        colorView.backgroundColor = color
+        
+        setValue(for: redSlider, greenSlider, blueSlider)
+        setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
     }
     
     // MARK: - IB Action
@@ -69,23 +70,28 @@ private extension SettingsViewController {
         )
     }
     
+    func setValue(for sliders: UISlider...) {
+        let ciColor = CIColor(color: color)
+        sliders.forEach { slider in
+            switch slider {
+                case redSlider: redSlider.value = Float(ciColor.red)
+                case greenSlider: greenSlider.value = Float(ciColor.green)
+                default: blueSlider.value = Float(ciColor.blue)
+            }
+        }
+    }
+    
+    func setValue(for labels: UILabel...) {
+        labels.forEach { label in
+            switch label {
+                case redValueLabel: label.text = string(from: redSlider.value)
+                case greenValueLabel: label.text = string(from: greenSlider.value)
+                default: label.text = string(from: blueSlider.value)
+            }
+        }
+    }
+    
     func string(from float: Float) -> String {
         String(format: "%.2f", float)
-    }
-    
-    func string(from cgFloat: CGFloat) -> String {
-        String(format: "%.2f", cgFloat)
-    }
-    
-    func setColors() {
-        let ciColor = CIColor(color: color)
-        
-        redSlider.value = Float(ciColor.red)
-        greenSlider.value = Float(ciColor.green)
-        blueSlider.value = Float(ciColor.blue)
-        
-        redValueLabel.text = string(from: ciColor.red)
-        greenValueLabel.text = string(from: ciColor.green)
-        blueValueLabel.text = string(from: ciColor.blue)
     }
 }
